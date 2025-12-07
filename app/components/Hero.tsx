@@ -1,40 +1,30 @@
 "use client";
-
 import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 to-black text-white px-6">
-      {/* Greeting */}
-      <motion.h1
-        className="text-4xl sm:text-6xl font-bold mb-4 text-center"
-        initial={{ opacity: 0, y: -50 }}
+    <section className="h-screen flex items-center">
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.6 }}
+        className="w-full"
       >
-        Hi, I'm Harshit Kandpal
-      </motion.h1>
-
-      {/* Subheading */}
-      <motion.p
-        className="text-lg sm:text-2xl text-gray-300 mb-6 text-center max-w-2xl"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.8 }}
-      >
-        I’m a Software Engineer building interactive web and mobile apps. Check out my projects below.
-      </motion.p>
-
-      {/* Call to Action */}
-      <motion.a
-        href="#projects"
-        className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-md shadow-lg"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
-      >
-        See My Work
-      </motion.a>
+        <div className="max-w-3xl">
+          <h1 className="text-4xl md:text-6xl leading-tight font-heading">Harshit Kandpal</h1>
+          <p className="mt-3 text-lg small-muted">
+            Software Engineer • Mobile + Web Dev • Cloud + Systems
+          </p>
+          <p className="mt-6 text-xl">
+            I build fast, reliable, user-centered applications — from full-stack microservices to production-ready Android apps.
+          </p>
+          <div className="mt-8 flex gap-4">
+            <a href="#projects" className="px-5 py-3 rounded-lg bg-primary text-white shadow-md hover:scale-[1.02] transition">View Projects</a>
+            <a href="/resume.pdf" download className="px-4 py-3 rounded-lg border border-primary small-muted">Download Resume</a>
+            <a href="#contact" className="px-4 py-3 rounded-lg small-muted">Contact</a>
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 }
