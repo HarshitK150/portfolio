@@ -8,12 +8,12 @@ import Contact from "./components/Contact";
 
 export default function Home() {
   return (
-    <div className="container-max space-y-20 py-14">
+    <div className="space-y-10 py-14">
       <Hero />
+      <Timeline />
       <Projects />
       <ResumePreview />
       <Skills />
-      <Timeline />
       <Contact />
     </div>
   );
