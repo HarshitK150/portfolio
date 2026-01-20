@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { motion } from "framer-motion";
 
 type Project = {
@@ -8,6 +7,8 @@ type Project = {
   stack: string[];
   gif: string;
   link: string;
+  github: string;
+  comingSoon?: boolean;
 };
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -62,55 +63,85 @@ export default function ProjectCard({ project }: { project: Project }) {
           {/* Action buttons */}
           <div className="flex gap-3">
             <motion.a
-              href={project.link}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-linear-to-r from-blue-500 to-cyan-500 text-white text-sm font-medium shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all duration-300"
+              href={
+                project.link && !project.comingSoon ? project.link : undefined
+              }
+              target="_blank"
+              rel="noreferrer"
+              whileHover={project.comingSoon ? {} : { scale: 1.05 }}
+              whileTap={project.comingSoon ? {} : { scale: 0.95 }}
+              className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg
+    text-white text-sm font-medium shadow-lg transition-all duration-300
+    ${
+      project.comingSoon
+        ? "bg-gray-400 shadow-none cursor-not-allowed"
+        : "bg-linear-to-r from-blue-500 to-cyan-500 shadow-blue-500/20 hover:shadow-blue-500/40"
+    }`}
             >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
-              View Project
+              {project.comingSoon ? (
+                // Coming Soon Icon
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4m0 4h.01M12 2a10 10 0 110 20 10 10 0 010-20z" // info/exclamation icon
+                  />
+                </svg>
+              ) : (
+                // Regular View Project Icon
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              )}
+
+              {project.comingSoon ? "Coming Soon" : "View Project"}
             </motion.a>
 
             <motion.a
-              href={project.gif}
+              href={
+                project.github && !project.comingSoon
+                  ? project.github
+                  : undefined
+              } // disable link if coming soon
               target="_blank"
               rel="noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-4 py-2.5 rounded-lg border-2 border-slate-600/50 text-slate-300 text-sm font-medium hover:bg-slate-800/50 hover:border-slate-500/70 backdrop-blur-sm transition-all duration-300 flex items-center gap-2"
+              whileHover={project.comingSoon ? {} : { scale: 1.05 }}
+              whileTap={project.comingSoon ? {} : { scale: 0.95 }}
+              className={`px-4 py-2.5 rounded-lg border-2 text-sm font-medium flex items-center gap-2 transition-all duration-300
+    ${
+      project.comingSoon
+        ? "border-gray-400 text-gray-300 cursor-not-allowed bg-gray-500/20" // greyed out
+        : "border-slate-600/50 text-slate-300 hover:bg-slate-800/50 hover:border-slate-500/70 backdrop-blur-sm"
+    }`}
             >
               <svg
                 className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
+                fill={project.comingSoon ? "currentColor" : "currentColor"} // still visible
                 viewBox="0 0 24 24"
               >
                 <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  fillRule="evenodd"
+                  d="M12 0C5.373 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.26.82-.577 0-.285-.01-1.04-.016-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.756-1.334-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.838 1.238 1.838 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.304.76-1.604-2.665-.304-5.467-1.332-5.467-5.932 0-1.31.467-2.382 1.236-3.222-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 016 0c2.292-1.552 3.3-1.23 3.3-1.23.653 1.653.241 2.873.118 3.176.77.84 1.236 1.912 1.236 3.222 0 4.61-2.807 5.625-5.479 5.922.43.372.814 1.103.814 2.222 0 1.606-.015 2.904-.015 3.296 0 .32.216.694.825.576C20.565 21.796 24 17.302 24 12c0-6.627-5.373-12-12-12z"
+                  clipRule="evenodd"
                 />
               </svg>
-              Demo
+              {project.comingSoon ? "Coming Soon" : "GitHub"}
             </motion.a>
           </div>
         </div>

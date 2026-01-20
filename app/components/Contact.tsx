@@ -44,7 +44,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative py-20 md:py-32 overflow-hidden">
+    <section id="contact" className="relative py-8 md:py-12 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-linear-to-b from-transparent via-blue-500/5 to-transparent pointer-events-none" />
 

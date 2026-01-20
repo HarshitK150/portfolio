@@ -1,5 +1,4 @@
 import "./globals.css";
-import React from "react";
 import type { ReactNode } from "react";
 import Navbar from "./components/Navbar";
 
@@ -18,7 +17,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
           <footer className="relative py-8 border-t border-slate-800/50 bg-slate-950/50 backdrop-blur-sm overflow-hidden">
             {/* Background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-b from-blue-500/5 via-transparent to-transparent pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-16 relative z-10">
               <div className="flex flex-col md:flex-row justify-between items-center gap-4">

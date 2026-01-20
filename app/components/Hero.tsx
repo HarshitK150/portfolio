@@ -150,12 +150,13 @@ export default function Hero() {
         className="absolute top-1/4 right-10 hidden lg:flex flex-col gap-4"
       >
         {[
-          { name: "Node.js", delay: 0 },
-          { name: "React", delay: 0.15 },
-          { name: "Python", delay: 0.3 },
-          { name: "PostgreSQL", delay: 0.45 },
-          { name: "GCP", delay: 0.6 },
-          { name: "Docker", delay: 0.75 },
+          { name: "JavaScript", delay: 0 },
+          { name: "Python", delay: 0.15 },
+          { name: "Node.js", delay: 0.3 },
+          { name: "React", delay: 0.45 },
+          { name: "PostgreSQL", delay: 0.6 },
+          { name: "AWS", delay: 0.75 },
+          { name: "Docker", delay: 0.9 },
         ].map((tech, idx) => (
           <motion.div
             key={tech.name}
@@ -199,7 +200,7 @@ export default function Hero() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
             </span>
             <span className="text-blue-300 text-xs sm:text-sm font-medium">
-              Available for SWE Roles • May 2026 Grad
+              Available for Full-Time SWE Roles Starting May 2026
             </span>
           </motion.div>
 
@@ -231,7 +232,7 @@ export default function Hero() {
             </span>
             <span className="text-blue-400/50">•</span>
             <span className="text-slate-300/70 font-light">
-              CS @ Michigan State
+              CS @ Michigan State University
             </span>
           </motion.div>
 
@@ -242,10 +243,12 @@ export default function Hero() {
             transition={{ delay: 0.6, duration: 0.7 }}
             className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl max-w-3xl text-slate-300/90 leading-relaxed"
           >
-            I build production-ready applications that solve real problems.
-            Currently shipping internal automation tools and data pipelines at{" "}
+            I design and ship production-ready applications that solve real
+            problems. Currently building automation tools and data pipelines at{" "}
             <span className="text-blue-300 font-medium">PromoterMotor</span>,
-            working with Node.js, Python, React, and cloud infrastructure.
+            while contributing to full-stack projects with Node.js, Python, and
+            cloud infrastructure. I focus on scalable, maintainable solutions
+            that have measurable impact.
           </motion.p>
 
           {/* Key highlights */}
@@ -334,7 +337,8 @@ export default function Hero() {
 
             <motion.a
               href="/resume.pdf"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.95 }}
               className="group px-6 sm:px-8 py-3 sm:py-4 rounded-xl border-2 border-blue-500/50 text-blue-200 font-medium hover:bg-blue-500/10 hover:border-blue-400/70 backdrop-blur-sm transition-all flex items-center gap-2 text-sm sm:text-base"
@@ -356,7 +360,7 @@ export default function Hero() {
             </motion.a>
 
             <motion.a
-              href="https://www.linkedin.com/in/harshitkandpal/"
+              href="https://www.linkedin.com/in/harshit-kandpal-8a1a50344/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}

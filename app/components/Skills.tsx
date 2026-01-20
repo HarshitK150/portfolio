@@ -206,7 +206,7 @@ export default function Skills() {
             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/30 border border-slate-700/30">
               <div className="flex gap-1">
                 <div className="w-2 h-2 rounded-full bg-linear-to-r from-cyan-500 to-blue-500" />
-                <div className="w-2 h-2 rounded-full bg-linear-to-rrom-cyan-500 to-blue-500" />
+                <div className="w-2 h-2 rounded-full bg-linear-to-r from-cyan-500 to-blue-500" />
                 <div className="w-2 h-2 rounded-full bg-linear-to-r from-cyan-500 to-blue-500" />
               </div>
               <span className="text-slate-400">Advanced</span>

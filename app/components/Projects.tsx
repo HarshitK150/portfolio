@@ -16,20 +16,23 @@ export default function Projects() {
         "PostgreSQL (Supabase)",
       ],
       gif: "/gifs/quote-battle.gif",
-      link: "https://quote-battle.com",
+      link: "https://quote-battle.vercel.app/",
+      github: "https://github.com/HarshitK150/quote-battle",
     },
     {
       title: "Spartificial: AI-Powered Chatbot Assistant (Coming Soon)",
       subtitle:
         "Spartificial is an AI-powered chatbot assistant currently under development, designed to support university and dining hall–related queries through natural language interaction. The system aims to provide contextual assistance for common student needs such as dining information, campus services, and general university resources. Development is focused on building a scalable backend, effective prompt orchestration, and extensible tool integration to enable accurate and responsive AI-driven conversations.",
       stack: ["Python", "FastAPI", "JavaScript", "React", "LLM APIs"],
-      gif: "/gifs/automation.gif",
-      link: "#",
+      gif: "/gifs/coming-soon.avif",
+      link: "",
+      github: "",
+      comingSoon: true,
     },
   ];
 
   return (
-    <section id="projects" className="relative py-20 md:py-32 overflow-hidden">
+    <section id="projects" className="relative py-8 md:py-12 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-linear-to-b from-transparent via-blue-500/5 to-transparent pointer-events-none" />
 
@@ -55,7 +58,7 @@ export default function Projects() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
           >
-            <span className="bg-linear-to-rrom-blue-400 via-cyan-300 to-blue-500 text-transparent bg-clip-text">
+            <span className="bg-linear-to-r from-blue-400 via-cyan-300 to-blue-500 text-transparent bg-clip-text">
               Projects
             </span>
           </motion.h2>
