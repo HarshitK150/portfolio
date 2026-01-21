@@ -19,7 +19,7 @@ const experiences = [
     role: "Software Engineering Intern",
     org: "PromoterMotor",
     location: "Remote",
-    period: "September 2024 - Present",
+    period: "September 2025 - Present",
     points: [
       "Designing and implementing an AI-driven content generation pipeline using Node.js and Hugging Face Transformers to programmatically create YouTube-ready video content, saving 10+ hours of manual work per week",
       "Architected automated data ingestion and transformation workflows that collect, clean, and convert structured data into publish-ready media assets, enabling scalable and repeatable content production",
