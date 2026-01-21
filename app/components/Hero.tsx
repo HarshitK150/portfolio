@@ -360,7 +360,7 @@ export default function Hero() {
             </motion.a>
 
             <motion.a
-              href="https://www.linkedin.com/in/harshit-kandpal-8a1a50344/"
+              href="https://www.linkedin.com/in/hkandpal-cs/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}

@@ -22,8 +22,8 @@ export default function Contact() {
         </svg>
       ),
       label: "LinkedIn",
-      value: "linkedin.com/in/harshit-kandpal-8a1a50344",
-      link: "https://www.linkedin.com/in/harshit-kandpal-8a1a50344/",
+      value: "linkedin.com/in/hkandpal-cs",
+      link: "https://www.linkedin.com/in/hkandpal-cs/",
       color: "from-cyan-500 to-blue-500",
     },
     {
