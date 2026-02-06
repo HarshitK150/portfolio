@@ -6,7 +6,7 @@ type Project = {
   subtitle: string;
   stack: string[];
   gif: string;
-  link: string;
+  link?: string;
   github: string;
   comingSoon?: boolean;
 };
@@ -62,56 +62,58 @@ export default function ProjectCard({ project }: { project: Project }) {
 
           {/* Action buttons */}
           <div className="flex gap-3">
-            <motion.a
-              href={
-                project.link && !project.comingSoon ? project.link : undefined
-              }
-              target="_blank"
-              rel="noreferrer"
-              whileHover={project.comingSoon ? {} : { scale: 1.05 }}
-              whileTap={project.comingSoon ? {} : { scale: 0.95 }}
-              className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg
-    text-white text-sm font-medium shadow-lg transition-all duration-300
-    ${
-      project.comingSoon
-        ? "bg-gray-400 shadow-none cursor-not-allowed"
-        : "bg-linear-to-r from-blue-500 to-cyan-500 shadow-blue-500/20 hover:shadow-blue-500/40"
-    }`}
-            >
-              {project.comingSoon ? (
-                // Coming Soon Icon
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v4m0 4h.01M12 2a10 10 0 110 20 10 10 0 010-20z" // info/exclamation icon
-                  />
-                </svg>
-              ) : (
-                // Regular View Project Icon
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  />
-                </svg>
-              )}
+            {(project.link || project.comingSoon) && (
+              <motion.a
+                href={
+                  project.link && !project.comingSoon ? project.link : undefined
+                }
+                target="_blank"
+                rel="noreferrer"
+                whileHover={project.comingSoon ? {} : { scale: 1.05 }}
+                whileTap={project.comingSoon ? {} : { scale: 0.95 }}
+                className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg
+              text-white text-sm font-medium shadow-lg transition-all duration-300
+              ${
+                project.comingSoon
+                  ? "bg-gray-400 shadow-none cursor-not-allowed"
+                  : "bg-linear-to-r from-blue-500 to-cyan-500 shadow-blue-500/20 hover:shadow-blue-500/40"
+              }`}
+              >
+                {project.comingSoon ? (
+                  // Coming Soon Icon
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v4m0 4h.01M12 2a10 10 0 110 20 10 10 0 010-20z" // info/exclamation icon
+                    />
+                  </svg>
+                ) : (
+                  // Regular View Project Icon
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                )}
 
-              {project.comingSoon ? "Coming Soon" : "View Project"}
-            </motion.a>
+                {project.comingSoon ? "Coming Soon" : "View Project"}
+              </motion.a>
+            )}
 
             <motion.a
               href={
@@ -124,11 +126,13 @@ export default function ProjectCard({ project }: { project: Project }) {
               whileHover={project.comingSoon ? {} : { scale: 1.05 }}
               whileTap={project.comingSoon ? {} : { scale: 0.95 }}
               className={`px-4 py-2.5 rounded-lg border-2 text-sm font-medium flex items-center gap-2 transition-all duration-300
-    ${
-      project.comingSoon
-        ? "border-gray-400 text-gray-300 cursor-not-allowed bg-gray-500/20" // greyed out
-        : "border-slate-600/50 text-slate-300 hover:bg-slate-800/50 hover:border-slate-500/70 backdrop-blur-sm"
-    }`}
+              ${
+                project.comingSoon
+                  ? "border-gray-400 text-gray-300 cursor-not-allowed bg-gray-500/20"
+                  : !project.link
+                    ? "flex-1 justify-center border-slate-600/50 text-slate-300 hover:bg-slate-800/50 hover:border-slate-500/70 backdrop-blur-sm"
+                    : "border-slate-600/50 text-slate-300 hover:bg-slate-800/50 hover:border-slate-500/70 backdrop-blur-sm"
+              }`}
             >
               <svg
                 className="w-4 h-4"

@@ -5,29 +5,70 @@ import ProjectCard from "./ProjectCard";
 export default function Projects() {
   const projects = [
     {
+      title: "Spartificial: AI-Powered Chatbot Assistant (In Progress)",
+      subtitle:
+        "Spartificial is an AI-powered chatbot assistant designed to support university and dining hall–related queries through natural language interaction. Built with a FastAPI backend and React frontend, the system focuses on prompt orchestration and extensible tool integration to provide accurate, contextual assistance for campus services and student resources.",
+      stack: [
+        "Python",
+        "FastAPI",
+        "JavaScript",
+        "React",
+        "LLM APIs",
+        "Tailwind CSS",
+      ],
+      gif: "/gifs/coming-soon.avif",
+      link: "",
+      github: "https://github.com/HarshitK150/Spartificial",
+      comingSoon: true,
+    },
+    {
       title: "Quote Battle: Full-Stack Voting App",
       subtitle:
-        "Quote Battle is a full-stack voting web application that allows users to vote on competing quotes and view a real-time dynamic leaderboard. The system uses a Node.js and Express backend with RESTful APIs to handle voting logic, leaderboard updates, and persistent data storage, ensuring consistency across sessions. A React-based frontend delivers real-time UI updates as votes are submitted, providing immediate feedback and improving overall user engagement. The application is designed with a clear separation between frontend and backend components to support maintainability and future feature expansion.",
+        "A full-stack voting web application that allows users to engage with competing quotes and view real-time leaderboard updates. The system utilizes a RESTful API architecture to handle voting logic and persistent data storage via PostgreSQL. The frontend is built with React to deliver sub-second UI updates, ensuring a seamless and engaging user experience.",
       stack: [
         "JavaScript",
         "Node.js",
         "Express",
         "React",
+        "Tailwind CSS",
         "PostgreSQL (Supabase)",
+        "CI/CD",
       ],
       gif: "/gifs/quote-battle.gif",
       link: "https://quote-battle.vercel.app/",
       github: "https://github.com/HarshitK150/quote-battle",
     },
     {
-      title: "Spartificial: AI-Powered Chatbot Assistant (Coming Soon)",
+      title: "90s Chatroom: Real-Time Messaging Platform",
       subtitle:
-        "Spartificial is an AI-powered chatbot assistant currently under development, designed to support university and dining hall–related queries through natural language interaction. The system aims to provide contextual assistance for common student needs such as dining information, campus services, and general university resources. Development is focused on building a scalable backend, effective prompt orchestration, and extensible tool integration to enable accurate and responsive AI-driven conversations.",
-      stack: ["Python", "FastAPI", "JavaScript", "React", "LLM APIs"],
-      gif: "/gifs/coming-soon.avif",
-      link: "",
-      github: "",
-      comingSoon: true,
+        "A retro-styled real-time communication platform that leverages WebSockets for instantaneous, multi-user messaging. The application is containerized using Docker and deployed to GCP Cloud Run, utilizing a serverless architecture to handle scalable traffic. It features a persistent MySQL backend and AJAX-driven frontend updates to minimize server overhead.",
+      stack: [
+        "Python",
+        "Flask",
+        "Socket.io",
+        "MySQL",
+        "Docker",
+        "GCP Cloud Run",
+      ],
+      gif: "/gifs/chat_screenshot.png",
+      link: "https://harshitkandpal.xyz/chat",
+      github: "https://github.com/HarshitK150/90s-chatroom",
+    },
+    {
+      title: "Sparty's Boots: Logic-Driven Puzzle Game",
+      subtitle:
+        "A desktop puzzle game developed by an Agile team of five, featuring a custom C++ logic-processing system for real-time boolean operations and circuit simulations. The application utilizes the wxWidgets framework for cross-platform rendering and an XML-based layer for robust data persistence. By following a modular object-oriented architecture and Agile methodologies, the team ensured a consistent 60 FPS performance while managing complex event-driven state changes and collaborative version control.",
+      stack: ["C++", "wxWidgets", "XML", "CMake", "Git"],
+      gif: "/gifs/sparty-boots.gif",
+      github: "https://github.com/HarshitK150/spartys-boots",
+    },
+    {
+      title: "Android Puzzle App: Native Mobile Game",
+      subtitle:
+        "A native Android application developed to provide a smooth, engaging mobile gaming experience. The app emphasizes optimized UI rendering for 60 FPS animations and efficient activity lifecycle management. Built with Java and the Android SDK, it features custom XML layouts and local state persistence for a seamless user journey.",
+      stack: ["Java", "Android SDK", "Android API", "XML", "Gradle"],
+      gif: "/gifs/sparty.webp",
+      github: "https://github.com/HarshitK150/puzzle-app",
     },
   ];
 

@@ -243,12 +243,23 @@ export default function Hero() {
             transition={{ delay: 0.6, duration: 0.7 }}
             className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl max-w-3xl text-slate-300/90 leading-relaxed"
           >
-            I design and ship production-ready applications that solve real
-            problems. Currently building automation tools and data pipelines at{" "}
-            <span className="text-blue-300 font-medium">PromoterMotor</span>,
-            while contributing to full-stack projects with Node.js, Python, and
-            cloud infrastructure. I focus on scalable, maintainable solutions
-            that have measurable impact.
+            I’m a{" "}
+            <span className="font-bold text-white">Software Engineer</span> and{" "}
+            <span className="font-bold text-sky-400">3.99 GPA</span> student
+            focused on shipping production-ready code. Currently serving as the{" "}
+            <span className="font-semibold text-white">
+              Software Engineering Lead
+            </span>{" "}
+            for a{" "}
+            <span className="italic text-slate-400">
+              Magna International Capstone
+            </span>{" "}
+            while building data pipelines as an intern at{" "}
+            <span className="font-semibold text-white">PromoterMotor</span>.
+            Expert in <span className="font-mono text-sky-400">TypeScript</span>
+            , <span className="font-mono text-sky-400">Python</span>, and{" "}
+            <span className="font-mono text-sky-400">Cloud Infrastructure</span>
+            .
           </motion.p>
 
           {/* Key highlights */}

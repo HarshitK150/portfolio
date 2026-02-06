@@ -8,12 +8,12 @@ const experiences = [
     location: "East Lansing, MI",
     period: "January 2026 - Present",
     points: [
-      "Developing a web-based CAD AI assistant that enables engineers to generate and modify part designs using textual and visual input, integrating Python, PyTorch, FreeCAD, JavaScript, and LLMs",
+      "Developing a web-based CAD AI assistant that enables engineers to generate and modify part designs using textual and visual input, integrating Python, FastAPI, FreeCAD, JavaScript, and LLMs",
       "Building interactive workflows that allow users to iteratively refine CAD models instead of relying on one-shot generation, improving usability and design accuracy",
       "Implementing AI-assisted editing and annotation features to reduce repetitive manual CAD operations, with the goal of cutting manual edits by ~35%",
       "Collaborating with a multidisciplinary team and industry mentors from Magna’s R&D organization to design a production-oriented tool aligned with real-world automotive engineering workflows",
     ],
-    technologies: ["Python", "PyTorch", "JavaScript", "LLMs", "FreeCAD"],
+    technologies: ["Python", "FastAPI", "JavaScript", "LLMs", "FreeCAD"],
   },
   {
     role: "Software Engineering Intern",

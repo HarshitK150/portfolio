@@ -177,7 +177,7 @@ export default function ResumePreview() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span>Last updated January 2026</span>
+                    <span>Last updated February 2026</span>
                   </div>
                 </div>
               </div>
